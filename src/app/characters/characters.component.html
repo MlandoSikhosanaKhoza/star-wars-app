@@ -1,0 +1,42 @@
+<section class="w3-animate-zoom" style="padding-top: 100px;background: url('assets/img/star.jpg') top center;background-attachment: fixed;background-size: cover;min-height: 100vh;">
+  <div style="padding: 3%">
+    <div class="w3-row w3-container" style="padding:0;">
+      <h1 class="w3-tag">Characters</h1>
+    </div>
+    <section class="w3-opacity w3-round-large">
+      <input type="text" [(ngModel)]="text" class="w3-input  w3-col s10 w3-white"/>
+      <input (click)="search()" type="button" value="Search" class="w3-btn w3-col s2 w3-yellow">
+    </section>
+    <div class="w3-white w3-opacity-min">
+      <table class="w3-table w3-striped">
+        <tr>
+          <th>Name</th>
+          <th class="w3-hide-large w3-hide-medium w3-hide-small">Height</th>
+          <th class="w3-hide-large w3-hide-medium w3-hide-small">Mass</th>
+          <th class="w3-hide-small">Hair</th>
+          <th class="w3-hide-small">Skin</th>
+          <th class="w3-hide-medium w3-hide-small">Eye</th>
+          <th class="w3-hide-medium w3-hide-small">Birth year</th>
+          <th class="w3-hide-medium w3-hide-small">Gender</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let c of characters.results">
+          <td>{{c.name}}</td>
+          <td class="w3-hide-large w3-hide-medium w3-hide-small">{{c.height}}</td>
+          <td class="w3-hide-large w3-hide-medium w3-hide-small">{{c.mass}}</td>
+          <td class="w3-hide-small">{{c.hair_color}}</td>
+          <td class="w3-hide-small">{{c.skin_color}}</td>
+          <td class="w3-hide-medium w3-hide-small">{{c.eye_color}}</td>
+          <td class="w3-hide-medium w3-hide-small">{{c.birth_year}}</td>
+          <td class="w3-hide-medium w3-hide-small">{{c.gender}}</td>
+          <td class="w3-btn w3-hover-white w3-yellow">Details</td>
+          <td class="w3-btn  w3-hover-white w3-black">Movies</td>
+        </tr>
+      </table>
+      <button (click)="prev()" class="w3-btn w3-col s6 w3-yellow w3-hover-white w3-border">Prev</button>
+      <button (click)="next()" class="w3-btn w3-col s6 w3-yellow w3-hover-white w3-border">Next</button>
+    </div>
+    
+  </div>  
+</section>
